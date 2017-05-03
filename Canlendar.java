@@ -19,21 +19,28 @@ public class Canlendar extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        editText = (EditText)findViewById(R.id.textView);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_canlendar);
-
     }
-    public void onSendButtonClickCanlendar(View view){
 
-        Intent intent =new Intent(this, AlarmActivity.class);
-        intent.putExtra(AlarmActivity.EXTRA_MESSAGE, editText.getText().toString());
-        EditText editText=(EditText)findViewById(R.id.editText);
-        String message= editText.getText().toString();
-        intent.putExtra(EXTRA_MESSAGE,message);
-        startActivityForResult(intent,EDIT_REQUEST);
-    }
-    public void addEvent(String title, String location, long begin, long end) {
+    public void onSendButtonClickcan(View view) {
+
+        // get the message for the alarm from the EditText
+       // EditText edtMessage = (EditText) findViewById(R.id.messageId);
+        //String message = edtMessage.getText().toString();
+
+        EditText edttitle = (EditText) findViewById(R.id.TitleId);
+       String title = edttitle.getText().toString();
+        //
+        EditText edtlocation = (EditText) findViewById(R.id.LocaltionId);
+        String location = edtlocation.getText().toString();
+
+        EditText edtbegin = (EditText) findViewById(R.id.beginId);
+        String begin = edtbegin.getText().toString();
+
+        EditText edtend = (EditText) findViewById(R.id.endId);
+        String end = edtend.getText().toString();
+
         Intent intent = new Intent(Intent.ACTION_INSERT)
                 .setData(CalendarContract.Events.CONTENT_URI)
                 .putExtra(CalendarContract.Events.TITLE, title)

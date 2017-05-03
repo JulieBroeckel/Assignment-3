@@ -4,51 +4,32 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.juliehou.assigement3.TimerActivity"
-    android:weightSum="1">
+    android:orientation="vertical">
 
-
-    <RelativeLayout
+    <EditText
+        android:id="@+id/messageId"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:hint="message" />
+
+    <EditText
+            android:id="@+id/hourId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="hour" />
 
 
         <EditText
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="101dp"
-            android:layout_weight="1"
-            android:text="TextView"
-            android:layout_marginTop="19dp"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
-
-
-        <EditText
-            android:id="@+id/textView3"
-            android:layout_width="wrap_content"
-            android:layout_height="101dp"
-
-            android:text=""
-            android:layout_marginBottom="33dp"
-            android:layout_above="@+id/button4"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
+            android:id="@+id/minuteId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="minute" />
 
 
         <Button
-            android:id="@+id/button4"
+            android:id="@+id/button_setAlarm"
+            android:onClick="onSendButtonClickAlarm"
             android:layout_width="wrap_content"
-            android:layout_height="71dp"
-            android:text="Set Alarm"
-            android:layout_marginBottom="115dp"
-            android:layout_alignParentBottom="true"
-            android:layout_alignRight="@+id/editText"
-            android:layout_alignEnd="@+id/editText"
-            android:layout_marginRight="141dp"
-            android:layout_marginEnd="141dp" />
-
-    </RelativeLayout>
-
+            android:layout_height="wrap_content"
+            android:text="Set Alarm" />
 </LinearLayout>
